@@ -50,7 +50,7 @@ my_insert_stmt = """insert into smoothies.public.orders
 values ('""" + name_on_order + """',
 '""" + ingredients_string + """')"""
 
-#st.write(my_insert_stmt)
+st.write(my_insert_stmt)
 time_to_insert = st.button('Submit Order')
 
 if time_to_insert:
@@ -61,8 +61,8 @@ if time_to_insert:
 ) 
 
 import requests
-smoothiefroot_response = requests.get(
-    "https://my.smoothiefroot.com/api/fruit/watermelon"
+smoothiefroot_response =requests.get(
+    "https://my.smoothiefroot.com/api/fruit/" + search_on
 )
 st.dataframe(
     data=smoothiefroot_response.json(),
